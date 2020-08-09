@@ -12,6 +12,7 @@ async function renderServer() {
     let server = await getServer();
 
     let html = '';
+	console.log(server);
     server.map(user => {
         let htmlSegment = `<div class="user">
                             <h2>${user.id} ${user.name}</h2>
