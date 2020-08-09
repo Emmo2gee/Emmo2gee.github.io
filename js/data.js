@@ -24,4 +24,4 @@ async function renderServer() {
     container.innerHTML = html;
 }
 
-renderUsers();
+renderServer();
