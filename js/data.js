@@ -1,28 +1,27 @@
 
-  function createNode(element) {
-      return document.createElement(element);
-  }
+async function getServer() {
+    let url = 'https://api.battlemetrics.com/servers/2272069';
+    try {
+        let res = await fetch(url);
+        return await res.json();
+    } catch (error) {
+        console.log(error);
+    }
+}
+async function renderServer() {
+    let server = await getServer();
 
-  function append(parent, el) {
-    return parent.appendChild(el);
-  }
+    let html = '';
+    server.map(user => {
+        let htmlSegment = `<div class="user">
+                            <h2>${user.id} ${user.name}</h2>
+                        </div>`;
 
-	const ul = document.getElementById('serverdata');
-	const url = 'https://api.battlemetrics.com/servers/2272069';
-	let serverdata = null;
-	
-  fetch(url)
-  .then((resp) => resp.json())
-  .then(function(data) {
-    let serverdata = data.results;
-    return serverdata.map(function(server) {
-      let li = createNode('li'),
-          span = createNode('span');
-      span.innerHTML = `${server.name} ${server.ip}`;
-      append(li, span);
-      append(ul, li);
-    })
-  })
-  .catch(function(error) {
-    console.log(error);
-  }); 
+        html += htmlSegment;
+    });
+
+    let container = document.querySelector('.content');
+    container.innerHTML = html;
+}
+
+renderUsers();
