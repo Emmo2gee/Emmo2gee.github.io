@@ -1,4 +1,4 @@
-
+/*
 async function getServer() {
     let url = 'https://api.battlemetrics.com/servers/2272069';
     try {
@@ -26,3 +26,9 @@ async function renderServer() {
 }
 
 renderServer();
+*/
+
+
+fetch(url)
+.then(res => res.json())
+.then(json => console.log(json));
