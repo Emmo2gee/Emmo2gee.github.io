@@ -9,6 +9,7 @@
 
 	const ul = document.getElementById('serverdata');
 	const url = 'https://api.battlemetrics.com/servers/2272069';
+	var serverdata;
 	
   fetch(url)
   .then((resp) => resp.json())
