@@ -7,7 +7,7 @@
 			color: white;
 			font-size:50px;
 			font-family: Calibri;
-			background-color: linear-gradient(to left, rgba(177,32,45,1), rgba(177,32,45,0));
+			background: linear-gradient(to left, rgba(177,32,45,1), rgba(177,32,45,0));
 			flex: 1 1 auto;
 			width: 33%;
 			text-align: center;
