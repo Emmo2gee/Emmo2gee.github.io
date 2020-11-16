@@ -16,7 +16,6 @@
 			background: linear-gradient(to right, rgba(177,32,45,1), rgba(177,32,45,0));
 			flex: 1 1 auto;
 			width: 33%;
-			text-align: center;
 			padding: 20px 20px 20px 20px;
 		}
 		.flex-header-image {
