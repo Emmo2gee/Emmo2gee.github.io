@@ -32,10 +32,12 @@
 		}
 		.main-content {
 			flex: 1;
+			background-color: blue;
+		}
+		.side-content-left, .side-content-right {
+			flex: 0 0 12em;
+			background-color: orange;
 		}
 		.side-content-left {
-			flex: 0 0 12em;
-		}
-		.side-content-right {
 			order:-1;
 		}		
