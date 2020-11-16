@@ -34,10 +34,7 @@
 			flex: 1;
 			background-color: blue;
 		}
-		.side-content-left, .side-content-right {
+		.footer {
 			flex: 0 0 12em;
 			background-color: orange;
 		}
-		.side-content-left {
-			order:-1;
-		}		
