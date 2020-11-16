@@ -31,9 +31,11 @@
 			flex-direction: column;
 		}
 		.main-content {
-			flex: 0 1 auto;
+			flex: 1;
 		}
-		.side-content {
-			flex: 0 1 auto;
+		.side-content-left {
+			flex: 0 0 12em;
 		}
-		
+		.side-content-right {
+			order:-1;
+		}		
