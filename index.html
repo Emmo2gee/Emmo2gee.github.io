@@ -21,12 +21,14 @@
 		})
 		.then(data => listContent(fetchContentDiv, data));
 
-		function listContent (listDiv, server) {
-				console.log(server)
+		function listContent (listDiv, servers) {
+				console.log(servers)
 				let ul = document.createElement('ul')
-				let li = document.createElement('li')
-				li.innerHTML = `server`
-				ul.append(li)
+				server.forEach(server => {
+					let li = document.createElement('li')
+					li.innerHTML = `server.name`
+					ul.append(li)
+				})
 			console.log(ul)
 			listDiv.append(ul)
 		}
