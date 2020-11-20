@@ -22,7 +22,7 @@
 		.then(data => serverContent(data));
 
 		function serverContent (serverData) {
-			console.log(servers)
+			console.log(serverData)
 			fetchContentDiv.innerHTML = '<p>${serverData}</p>'
 		}
 
