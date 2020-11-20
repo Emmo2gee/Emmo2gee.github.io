@@ -21,13 +21,12 @@
 		})
 		.then(data => listContent(fetchContentDiv, data));
 
-		function listContent (listDiv, repos) {
-			console.log(repos)
+		function listContent (listDiv, server) {
+			console.log(server)
 			let ul = document.createElement('ul')
-			repos.forEach(repo => {
-				let li = document.createElement('li')
-				li.innerHTML = `<a href=${repo.url}>${repo.name}</a>`
-				ul.append(li)
+			let li = document.createElement('li')
+			li.innerHTML = `server`
+			ul.append(li)
 			})
 			console.log(ul)
 			listDiv.append(ul)
