@@ -24,7 +24,7 @@
 		function listContent (listDiv, servers) {
 				console.log(servers)
 				let ul = document.createElement('ul')
-				server.forEach(server => {
+				servers.forEach(server => {
 					let li = document.createElement('li')
 					li.innerHTML = `server.name`
 					ul.append(li)
