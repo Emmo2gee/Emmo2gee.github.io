@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
 	<script type="text/javascript">
-		fetch('https://api.battlemetrics.com/servers/2272069/players')
-			.then(response => {console.log(response)})
+		fetch('https://api.battlemetrics.com/servers/2272069/name')
+			.then(response => response.json())
+			.then(data => {
+				console.log(data)
+			});
 	</script>
 
 <!-- STYLE SHEETS -->
