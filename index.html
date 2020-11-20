@@ -5,11 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
 	<script type="text/javascript">
+
+		let fetchContentDiv = document.querySelector('.main-content')
+		
 		fetch('https://api.battlemetrics.com/servers/2272069')
-			.then(response => response.json())
-			.then(data => {
-				console.log(data)
-			});
+		.then(response => {
+			if (response.ok){
+				return response.json()
+			} else {
+				return Promise.reject({
+				    status: response.status,
+					statusText: response.statusText
+				})
+			}
+		}}
+		.then(data => listContent(fetchContentDiv, data));
+		.catch(error => {
+			console.log(error)
+		});
+
+		function listContent (listDiv, repos) {
+			console.log(repos)
+			let ul = document.createElement('ul')
+			repos.forEach(repo => {
+				let li = document.createElement('li')
+				li.innerHTML = `<a href=${repo.url}>${repo.name}</a>`
+				ul.append(li)
+			})
+			console.log(ul)
+			listDiv.append(ul)
+		}
+
 
 	</script>
 
