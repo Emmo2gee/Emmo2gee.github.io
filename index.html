@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
 	<script type="text/javascript">
-
-		let fetchContentDiv = document.querySelector('.main-content')
 		
 		fetch('https://api.battlemetrics.com/servers/2272069')
 		.then(response => {
@@ -19,11 +17,11 @@
 				})
 			}
 		})
-		.then(data => serverContent(fetchContentDiv, data));
+		.then(data => serverContent(data));
 
-		function serverContent (fetchContentDiv, serverData) {
+		function serverContent (serverData) {
 			console.log(serverData)
-			fetchContentDiv.innerHTML = '<p>${serverData}</p>'
+			document.querySelector('.main-content').innerHTML = '<p>${serverData}</p>'
 		}
 
 
