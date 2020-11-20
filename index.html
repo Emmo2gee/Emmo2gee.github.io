@@ -20,9 +20,6 @@
 			}
 		})
 		.then(data => listContent(fetchContentDiv, data));
-		.catch(error => {
-			console.log(error)
-		});
 
 		function listContent (listDiv, repos) {
 			console.log(repos)
