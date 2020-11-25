@@ -32,9 +32,10 @@
 		}
 		.main-content {
 			flex: 1;
-			background-color: blue;
+			background-color: #b120;
+			color: white;
 		}
 		.footer {
 			flex: 0 0 12em;
-			background-color: orange;
+			background-color: #b1202d;
 		}
