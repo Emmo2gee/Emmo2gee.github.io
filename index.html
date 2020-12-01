@@ -24,22 +24,17 @@
 			document.querySelector('.bmData').innerHTML = serverData.data.attributes.name + " " + serverData.data.attributes.details.map
 		}
 
-	async function asyncCall() {
-		try {
-		  let [server, playerList] = await Promise.all([
-			fetch('https://api.battlemetrics.com/servers/2272069'),
-			fetch('https://api.battlemetrics.com/servers/2272069?include=player'),
-		  ]);
-
-		  ReactDOM.render(
-			<Test server={server} playerList={playerList}/>,
-			  document.getElementById('multiFetch');
-		  );
-		}
-		catch(err) {
-		  console.log(err);
-		};
-	}
+		Promise.all([
+            fetch('https://api.battlemetrics.com/servers/2272069').then(value => value.json()),
+            fetch('https://api.battlemetrics.com/servers/2272069?include=player').then(value => value.json())
+            ])
+            .then((value) => {
+               console.log(value)
+              //json response
+            })
+            .catch((err) => {
+                console.log(err);
+            });
 
 	</script>
 
