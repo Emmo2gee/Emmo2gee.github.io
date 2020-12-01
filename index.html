@@ -30,7 +30,7 @@
             ])
             .then((value) => {
                console.log(value)
-              //json response
+				document.querySelector('.multiFetch').innerHTML = value.data.attributes.name
             })
             .catch((err) => {
                 console.log(err);
