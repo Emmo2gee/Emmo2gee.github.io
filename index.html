@@ -22,7 +22,7 @@
 
 		function serverContent (serverData) {
 			console.log(serverData)
-			document.querySelector('.bmData').innerHTML = serverData.data.attributes.name + " " + serverData.data.attributes.details.map
+			document.querySelector('.bmData').innerHTML = serverData.data.attributes.name + " " + serverData.data.attributes.details.map + " " + serverData.included.type:player
 		}
 
 /*		Promise.all([
