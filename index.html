@@ -24,6 +24,7 @@
 			document.querySelector('.bmData').innerHTML = serverData.data.attributes.name + " " + serverData.data.attributes.details.map
 		}
 
+	async function asyncCall() {
 		try {
 		  let [server, playerList] = await Promise.all([
 			fetch('https://api.battlemetrics.com/servers/2272069'),
@@ -38,7 +39,7 @@
 		catch(err) {
 		  console.log(err);
 		};
-
+	}
 
 	</script>
 
