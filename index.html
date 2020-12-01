@@ -24,6 +24,21 @@
 			document.querySelector('.bmData').innerHTML = serverData.data.attributes.name + " " + serverData.data.attributes.details.map
 		}
 
+		try {
+		  let [server, playerList] = await Promise.all([
+			fetch('https://api.battlemetrics.com/servers/2272069'),
+			fetch('https://api.battlemetrics.com/servers/2272069?include=player'),
+		  ]);
+
+		  ReactDOM.render(
+			<Test server={server} playerList={playerList}/>,
+			  document.getElementById('multiFetch');
+		  );
+		}
+		catch(err) {
+		  console.log(err);
+		};
+
 
 	</script>
 
@@ -47,6 +62,7 @@
 	<div class="content-container">
 		<main class="main-content">
 			<p class="bmData">Main content</p>
+			<p id="multiFetch">Main content</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fermentum lacinia felis, pretium elementum augue tincidunt vel. Donec semper porttitor leo, eu pellentesque diam lobortis faucibus. Phasellus elementum convallis lacinia. Donec a nunc sit amet ex ornare posuere. Nulla auctor est et justo ultricies tempus. Donec non nisi facilisis, placerat quam ac, porta dolor. Quisque quis ex arcu. Duis luctus justo a mi ultricies, sed commodo arcu rhoncus. Praesent finibus pharetra sollicitudin. Quisque urna dolor, efficitur blandit viverra eu, tempor at augue. Nulla gravida, magna et imperdiet maximus, mi lorem facilisis leo, non ultricies tellus tellus sed ante. Integer eu lectus urna. Nam augue enim, tempus ac est ut, consequat eleifend justo.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fermentum lacinia felis, pretium elementum augue tincidunt vel. Donec semper porttitor leo, eu pellentesque diam lobortis faucibus. Phasellus elementum convallis lacinia. Donec a nunc sit amet ex ornare posuere. Nulla auctor est et justo ultricies tempus. Donec non nisi facilisis, placerat quam ac, porta dolor. Quisque quis ex arcu. Duis luctus justo a mi ultricies, sed commodo arcu rhoncus. Praesent finibus pharetra sollicitudin. Quisque urna dolor, efficitur blandit viverra eu, tempor at augue. Nulla gravida, magna et imperdiet maximus, mi lorem facilisis leo, non ultricies tellus tellus sed ante. Integer eu lectus urna. Nam augue enim, tempus ac est ut, consequat eleifend justo.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fermentum lacinia felis, pretium elementum augue tincidunt vel. Donec semper porttitor leo, eu pellentesque diam lobortis faucibus. Phasellus elementum convallis lacinia. Donec a nunc sit amet ex ornare posuere. Nulla auctor est et justo ultricies tempus. Donec non nisi facilisis, placerat quam ac, porta dolor. Quisque quis ex arcu. Duis luctus justo a mi ultricies, sed commodo arcu rhoncus. Praesent finibus pharetra sollicitudin. Quisque urna dolor, efficitur blandit viverra eu, tempor at augue. Nulla gravida, magna et imperdiet maximus, mi lorem facilisis leo, non ultricies tellus tellus sed ante. Integer eu lectus urna. Nam augue enim, tempus ac est ut, consequat eleifend justo.</p>
