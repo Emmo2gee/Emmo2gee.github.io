@@ -7608,11 +7608,11 @@ function serverContent (serverData) {
 }
 
 function bmWrapper() {
-    Server.GetServerPlayerCount(2272069).then((result) => {
-        console.log(result);
-    });
+    //Server.GetServerPlayerCount(2272069).then((result) => {
+    //    console.log(result);
+    //});
 
-    Server.GetServerInfoByID(2272069).then((result2) => {
+    Server.GetServerInfoById(2272069).then((result2) => {
         console.log(result2);
         document.querySelector('.bmWrapper').innerHTML = JSON.stringify(result2);
     });
