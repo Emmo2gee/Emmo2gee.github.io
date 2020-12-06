@@ -28,3 +28,7 @@ function bmWrapper() {
 
 }
 bmWrapper();
+
+webPreferences: {
+    nodeIntegration: true
+}
