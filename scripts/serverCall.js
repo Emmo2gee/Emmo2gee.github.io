@@ -1,3 +1,5 @@
+module.exports = function (n) { return n * 111 };
+
 const { Server } = require("battle-wrapper");
 
 let fetchRepoDiv = document.querySelector('.multiFetch')
@@ -28,7 +30,3 @@ function bmWrapper() {
 
 }
 bmWrapper();
-
-webPreferences: {
-    nodeIntegration: true
-}
