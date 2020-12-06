@@ -18,3 +18,10 @@ function serverContent (serverData) {
     console.log(serverData)
     document.querySelector('.bmData').innerHTML = serverData.data.attributes.name + " " + serverData.data.attributes.details.map
 }
+
+function bmWrapper() {
+    Server.GetServerPlayerCountHistory(2272069).then((result) => {
+        console.log(result);
+      });
+
+}
