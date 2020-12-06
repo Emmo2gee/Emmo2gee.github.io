@@ -28,6 +28,7 @@ function bmWrapper() {
 
     Server.GetServerInfoByID(2272069).then((result2) => {
         console.log(result2);
+        document.querySelector('.bmWrapper').innerHTML = JSON.stringify(result2);
     });
 }
 bmWrapper();
