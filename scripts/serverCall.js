@@ -20,6 +20,7 @@ function serverContent (serverData) {
     console.log(serverData)
     document.querySelector('.bmData').innerHTML = serverData.data.attributes.name + " " + serverData.data.attributes.details.map
 }
+<<<<<<< HEAD
 
 function bmWrapper() {
     battleWrapper.Server.GetServerPlayerCountHistory(2272069).then((result) => {
@@ -29,3 +30,5 @@ function bmWrapper() {
 }
 
 bmWrapper();
+=======
+>>>>>>> parent of cc709d2... Update serverCall.js
