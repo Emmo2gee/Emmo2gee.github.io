@@ -1,0 +1,23 @@
+{
+  "name": "battle-wrapper",
+  "version": "0.10.2",
+  "description": "A basic wrapper for the battlemetrics API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wolfleader101",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.24.0",
+    "axios": "^0.19.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wolfleader101/battle-wrapper.git"
+  },
+  "devDependencies": {
+    "moment": "^2.24.0",
+    "axios": "^0.19.2"
+  }
+}
