@@ -1,4 +1,4 @@
-const battleWrapper = require("battle-wrapper");
+const { Server } = require("battle-wrapper");
 
 let fetchRepoDiv = document.querySelector('.multiFetch')
 		
@@ -24,7 +24,7 @@ function serverContent (serverData) {
 function bmWrapper() {
     Server.GetServerPlayerCountHistory(2272069).then((result) => {
         console.log(result);
-      });
+    });
 
 }
 bmWrapper();
