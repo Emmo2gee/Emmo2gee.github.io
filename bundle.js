@@ -1782,6 +1782,7 @@ module.exports = {
                     Id: attr.id,
                     Name: attr.name,
                     Population: attr.players + "/" + attr.maxPlayers,
+                    PlayerList: attr.players,
                     Country: attr.country,
                     Rank: attr.rank,
                     Description: attr.details.rust_description
