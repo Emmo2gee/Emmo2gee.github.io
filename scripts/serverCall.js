@@ -1,3 +1,5 @@
+const battleWrapper = require("battle-wrapper");
+
 let fetchRepoDiv = document.querySelector('.multiFetch')
 		
 fetch('https://api.battlemetrics.com/servers/2272069')
@@ -20,7 +22,7 @@ function serverContent (serverData) {
 }
 
 function bmWrapper() {
-    Server.GetServerPlayerCountHistory(2272069).then((result) => {
+    battleWrapper.Server.GetServerPlayerCountHistory(2272069).then((result) => {
         console.log(result);
       });
 
