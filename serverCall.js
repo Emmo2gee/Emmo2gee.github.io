@@ -22,7 +22,7 @@ function serverContent (serverData) {
 }
 
 function bmWrapper() {
-    Server.GetServerPlayerCountHistory(2272069).then((result) => {
+    Server.GetServerPlayerCount(2272069).then((result) => {
         console.log(result);
     });
 
