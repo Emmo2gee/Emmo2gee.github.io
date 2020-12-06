@@ -1,4 +1,4 @@
-const { Server } = require("./node_modules/battle-wrapper");
+const { Server } = require("battle-wrapper");
 
 let fetchRepoDiv = document.querySelector('.multiFetch')
 		
