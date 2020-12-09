@@ -41,7 +41,7 @@ function serverContent (playerData) {
 }
 
 function serverContent (serverData) {
-    pageTitle.innerHTML = serverData.attributes.name;
+    pageTitle.innerHTML = serverData.data.attributes.name;
 }
 /*
 function bmWrapper() {
