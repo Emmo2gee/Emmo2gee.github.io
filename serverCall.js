@@ -2,6 +2,7 @@
 
 let fetchContainer = document.querySelector('.bmData');
 let wrapperContainer = document.querySelector('.bmWrapper');
+let pageTitle = document.querySelector('.pageTitle');
 		
 fetch('https://api.battlemetrics.com/servers/2272069?include=player')
 .then(response => {
@@ -16,8 +17,8 @@ fetch('https://api.battlemetrics.com/servers/2272069?include=player')
 })
 .then(data => serverContent(data));
 
-function serverContent (serverData) {
-	let playerList = serverData.included;
+function serverContent (playerData) {
+	let playerList = playerData.included;
     
     playerList.forEach(player =>{
         let playerRow = document.createElement('tr');
@@ -38,6 +39,9 @@ function serverContent (serverData) {
     console.log(serverData);
 }
 
+function serverContent (serverData) {
+    pageTitle.innerHTML = serverData.attributes.name;
+}
 /*
 function bmWrapper() {
     //Server.GetServerPlayerCount(2272069).then((result) => {
