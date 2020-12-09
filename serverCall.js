@@ -23,12 +23,12 @@ function serverContent (serverData) {
         let playerRow = document.createElement('tr');
         let playerCell = document.createElement('td');
         let timePlayedCell = document.createElement('td');
+
         playerCell.innerHTML = player.attributes.name;
-        console.log(player.meta.metadata[2].value);
-        if(player.meta.metadata[2].value == undefined){
+        if(!player.meta.metadata[2]){
             timePlayedCell.innerHTML = "0";
         } else {
-        timePlayedCell.innerHTML = player.meta.metadata[2].value;
+            timePlayedCell.innerHTML = player.meta.metadata[2].value;
         }
         playerRow.append(playerCell);
         playerRow.append(timePlayedCell);
