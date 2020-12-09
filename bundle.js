@@ -25,7 +25,11 @@ function serverContent (serverData) {
         let playerCell = document.createElement('td');
         let timePlayedCell = document.createElement('td');
         playerCell.innerHTML = player.attributes.name;
+        if(player.meta.metadata[2].value == undefined){
+            timePlayedCell.innerHTML = "0";
+        } else {
         timePlayedCell.innerHTML = player.meta.metadata[2].value;
+        }
         playerRow.append(playerCell);
         playerRow.append(timePlayedCell);
         fetchContainer.append(playerRow);
