@@ -35,12 +35,8 @@ function serverContent (playerData) {
         playerRow.append(timePlayedCell);
         fetchContainer.append(playerRow);
     })
-	
+	pageTitle.innerHTML = serverData.data.attributes.name;
     console.log(serverData);
-}
-
-function serverContent (serverData) {
-    pageTitle.innerHTML = serverData.data.attributes.name;
 }
 /*
 function bmWrapper() {
