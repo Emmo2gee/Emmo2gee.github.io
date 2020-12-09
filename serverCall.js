@@ -1,4 +1,4 @@
-const { Server } = require("battle-wrapper");
+//const { Server } = require("battle-wrapper");
 
 let fetchContainer = document.querySelector('.bmData');
 let wrapperContainer = document.querySelector('.bmWrapper');
@@ -33,6 +33,7 @@ function serverContent (serverData) {
     console.log(serverData);
 }
 
+/*
 function bmWrapper() {
     //Server.GetServerPlayerCount(2272069).then((result) => {
     //    console.log(result);
@@ -44,3 +45,4 @@ function bmWrapper() {
     });
 }
 bmWrapper();
+*/
