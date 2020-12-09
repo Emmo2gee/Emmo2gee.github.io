@@ -18,13 +18,13 @@ fetch('https://api.battlemetrics.com/servers/2272069?include=player')
 
 function serverContent (serverData) {
 	let playerList = serverData.included;
-    let ul = document.createElement('ul');
     
     playerList.forEach(player =>{
-        let li = document.createElement('li');
-        li.innerHTML = player.attributes.name;
-        ul.append(li);
-        fetchContainer.append(ul);
+        let playerRow = document.createElement('tr');
+        let playerCell = document.createElement('td');
+        playerCell.innerHTML = player.attributes.name;
+        playerRow.append(playerCell);
+        fetchContainer.append(playerRow);
     })
 	
     console.log(serverData);
