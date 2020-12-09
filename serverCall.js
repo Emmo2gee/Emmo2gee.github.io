@@ -1,12 +1,11 @@
 const { Server } = require("battle-wrapper");
 
-let fetchRepoDiv = document.querySelector('.multiFetch')
+let fetchContainer = document.querySelector('.bmData');
 		
-fetch('https://api.battlemetrics.com/servers/2272069')
 fetch('https://api.battlemetrics.com/servers/2272069?include=player')
 .then(response => {
     if (response.ok){
-        return response.json()
+        return response.json();
     } else {
         return Promise.reject({
             status: response.status,
@@ -17,8 +16,19 @@ fetch('https://api.battlemetrics.com/servers/2272069?include=player')
 .then(data => serverContent(data));
 
 function serverContent (serverData) {
-    //console.log(serverData)
-    document.querySelector('.bmData').innerHTML = serverData.data.attributes.name + " " + serverData.data.attributes.details.map
+	let playerList = serverData.included;
+    let ul = document.createElement('ul');
+    
+    playerList.forEach(player =>{
+        let li = document.createElement('li');
+        li.innerHTML = player.attributes.name;
+        ul.append(li)
+        fetchContainer.append(ul)
+    })
+    
+	
+    console.log(serverData);
+    document.querySelector('.bmData').innerHTML = serverData.data.attributes.name
 }
 
 function bmWrapper() {
@@ -28,7 +38,7 @@ function bmWrapper() {
 
     Server.GetServerInfoById(2272069).then((result2) => {
         console.log(result2);
-        document.querySelector('.bmWrapper').innerHTML = JSON.stringify(result2);
+        fetchContainer.innerHTML = JSON.stringify(result2);
     });
 }
 bmWrapper();
