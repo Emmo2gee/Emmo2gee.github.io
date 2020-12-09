@@ -22,8 +22,11 @@ function serverContent (serverData) {
     playerList.forEach(player =>{
         let playerRow = document.createElement('tr');
         let playerCell = document.createElement('td');
+        let timePlayedCell = document.createElement('td');
         playerCell.innerHTML = player.attributes.name;
+        timePlayedCell.innerHTML = player.meta.metadata[2].value;
         playerRow.append(playerCell);
+        playerRow.append(timePlayedCell);
         fetchContainer.append(playerRow);
     })
 	
