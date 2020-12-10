@@ -38,19 +38,18 @@ function serverContent (playerData) {
 	pageTitle.innerHTML = serverData.data.attributes.name;
     console.log(serverData);
 }
-/*
+
 function bmWrapper() {
     //Server.GetServerPlayerCount(2272069).then((result) => {
     //    console.log(result);
     //});
 
-    Server.GetServerInfoById(2272069).then((result2) => {
+    Server.GetServerPlayerCountHistory(2272069, 90).then((result2) => {
         console.log(result2);
-        wrapperContainer.innerHTML = JSON.stringify(result2);
     });
 }
 bmWrapper();
-*/
+
 
 function fancyTimeFormat(duration)
 {   
