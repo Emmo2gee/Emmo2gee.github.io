@@ -1,5 +1,3 @@
-//const { Server } = require("battle-wrapper");
-
 let fetchContainer = document.querySelector('.bmData');
 let wrapperContainer = document.querySelector('.bmWrapper');
 let pageTitle = document.querySelector('.pageTitle');
@@ -24,48 +22,18 @@ function serverContent (playerData) {
         let playerRow = document.createElement('tr');
         let playerCell = document.createElement('td');
         let timePlayedCell = document.createElement('td');
+        let updatedAt = player.attributes.updatedAt.replace(/-/g,'/').replace(/Z/g,'').replace(/T/g,' ').slice(0, -4);
+        let diff = Math.abs(new Date() - new Date(updatedAt));
 
+        //Amend innerHTML of cells with values
         playerCell.innerHTML = player.attributes.name;
-        if(!player.meta.metadata[2]){
-            timePlayedCell.innerHTML = "Just joined!";
-        } else {
-            timePlayedCell.innerHTML = fancyTimeFormat(player.meta.metadata[2].value);
-        }
+        timePlayedCell.innerHTML = timeConversion(diff);
+
+        //Append table rows and cells together
         playerRow.append(playerCell);
         playerRow.append(timePlayedCell);
         fetchContainer.append(playerRow);
     })
 	pageTitle.innerHTML = serverData.data.attributes.name;
     console.log(serverData);
-}
-
-function bmWrapper() {
-    //Server.GetServerPlayerCount(2272069).then((result) => {
-    //    console.log(result);
-    //});
-
-    Server.GetServerPlayerCountHistory(2272069, 90).then((result2) => {
-        console.log(result2);
-    });
-}
-bmWrapper();
-
-
-function fancyTimeFormat(duration)
-{   
-    // Hours, minutes and seconds
-    var hrs = ~~(duration / 3600);
-    var mins = ~~((duration % 3600) / 60);
-    var secs = ~~duration % 60;
-
-    // Output like "1:01" or "4:03:59" or "123:03:59"
-    var ret = "";
-
-    if (hrs > 0) {
-        ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
-    }
-
-    ret += "" + mins + ":" + (secs < 10 ? "0" : "");
-    ret += "" + secs;
-    return ret;
 }
