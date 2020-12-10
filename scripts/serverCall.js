@@ -37,3 +37,10 @@ function serverContent (playerData) {
 	pageTitle.innerHTML = serverData.data.attributes.name;
     console.log(serverData);
 }
+
+$(document).ready( function () {
+    $('#daTable').DataTable({
+      paging: false,
+      scrollY: 400,
+  });
+ });

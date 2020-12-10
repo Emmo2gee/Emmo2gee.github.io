@@ -33,8 +33,13 @@
 			flex: 1;
 			background-color: #b120;
 			color: white;
+			padding: 15px 0px 0px 0px;
 		}
 		.footer {
 			flex: 0 0 5em;
 			background-color: #b1202d;
+		}
+
+		#playerTable {
+			width:20%;
 		}
