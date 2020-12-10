@@ -35,7 +35,6 @@ function serverContent (playerData) {
         fetchContainer.append(playerRow);
     })
 	pageTitle.innerHTML = serverData.data.attributes.name;
-    console.log(serverData);
 }
 
 $(document).ready( function () {
