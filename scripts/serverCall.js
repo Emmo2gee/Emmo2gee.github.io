@@ -39,7 +39,7 @@ function serverContent (playerData) {
 }
 
 $(document).ready( function () {
-    $('#daTable').DataTable({
+    $('#playerTable').DataTable({
       paging: false,
       scrollY: 400,
   });
