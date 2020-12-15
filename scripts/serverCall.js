@@ -1,8 +1,10 @@
 let fetchContainer = document.querySelector('.bmData');
 let wrapperContainer = document.querySelector('.bmWrapper');
 let pageTitle = document.querySelector('.pageTitle');
+var serverID = "2272069";
 		
-fetch('https://api.battlemetrics.com/servers/2272069?include=player')
+//fetch('https://api.battlemetrics.com/servers/2272069?include=player')
+fetch('https://api.battlemetrics.com/servers/' + serverID + '?include=player')
 .then(response => {
     if (response.ok){
         return response.json();
