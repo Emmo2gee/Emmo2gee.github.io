@@ -4,4 +4,5 @@ function submitBtn(){
 
     localStorage.setItem("serverID", idValue);
     console.log(idValue);
+    window.location = "page2.html";
 }
