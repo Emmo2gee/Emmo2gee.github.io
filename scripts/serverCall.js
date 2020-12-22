@@ -19,7 +19,6 @@ fetch('https://api.battlemetrics.com/servers/' + serverID + '?include=player')
 
 function serverContent (playerData) {
     let playerList = playerData.included;
-    console.log(serverID);
     
     playerList.forEach(player =>{
         let playerRow = document.createElement('tr');
